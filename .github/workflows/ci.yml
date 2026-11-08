@@ -1,0 +1,86 @@
+name: Python and Notebook CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    name: Python tests and notebook validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install project dependencies
+        shell: bash
+        run: |
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
+          fi
+
+          if [ -f python/requirements.txt ]; then
+            python -m pip install -r python/requirements.txt
+          fi
+
+          # CI tools used by this workflow.
+          python -m pip install pytest nbformat
+
+      - name: Install the local Python package when configured
+        shell: bash
+        run: |
+          if [ -f python/pyproject.toml ]; then
+            python -m pip install -e ./python
+          elif [ -f pyproject.toml ]; then
+            python -m pip install -e .
+          else
+            echo "No pyproject.toml found; using the source tree directly."
+          fi
+
+      - name: Run Python tests
+        shell: bash
+        env:
+          PYTHONPATH: python/src
+        run: |
+          if [ -d tests ] && find tests -type f \\( -name "test_*.py" -o -name "*_test.py" \\) | grep -q .; then
+            python -m pytest -q
+          else
+            echo "No Python test files found under tests/; skipping pytest."
+          fi
+
+      - name: Validate Jupyter notebooks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import nbformat
+
+          notebook_dir = Path("notebooks")
+          notebooks = sorted(notebook_dir.rglob("*.ipynb")) if notebook_dir.exists() else []
+
+          if not notebooks:
+              print("No notebooks found under notebooks/; skipping notebook validation.")
+          else:
+              for notebook_path in notebooks:
+                  notebook = nbformat.read(notebook_path, as_version=4)
+                  nbformat.validate(notebook)
+                  print(f"Valid notebook: {notebook_path}")
+          PY

@@ -1,0 +1,4 @@
+Slot,Valid readings,Lower IQR bound (cm),Upper IQR bound (cm),Potential outliers,Potential outliers (%)
+Slot 1,115,-158.3,288.26,0,0.0
+Slot 2,102,-93.08,236.76,0,0.0
+Slot 3,123,-154.70499999999998,293.655,0,0.0

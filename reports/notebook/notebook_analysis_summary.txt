@@ -1,0 +1,27 @@
+INTELLIGENT PARKING SPACE MONITORING — NOTEBOOK ANALYSIS
+================================================================
+Data source: Collected CSV — provenance not yet specified
+Records analysed: 133
+Observation start (UTC): 2026-11-08 16:29:23.877000+00:00
+Observation end (UTC): 2026-11-08 16:29:23.889000+00:00
+Observation window (minutes): 0.00
+Overall utilization among known slot observations (%): 29.41
+Rows with consistent summary counts: 133/133
+
+SLOT SUMMARY
+  Slot  Occupied readings  Vacant readings  Unknown readings  Known readings  Occupied among known (%)  Unknown (%)
+Slot 1                 31               84                18             115                     26.96        13.53
+Slot 2                 17               85                31             102                     16.67        23.31
+Slot 3                 52               71                10             123                     42.28         7.52
+
+DISTANCE SUMMARY
+  Slot  Valid readings (n)  Mean (cm)  Std. dev. (cm)  Minimum (cm)  Maximum (cm)
+Slot 1                 115     89.237          48.981          8.97        120.99
+Slot 2                 102     71.502          43.613          8.42        113.09
+Slot 3                 123     77.608          55.468          6.26        125.71
+
+DATA QUALITY SUMMARY
+  Slot  Unknown status count  Unknown status (%)  No-echo sentinel count (-1)
+Slot 1                    18               13.53                           18
+Slot 2                    31               23.31                           31
+Slot 3                    10                7.52                           10

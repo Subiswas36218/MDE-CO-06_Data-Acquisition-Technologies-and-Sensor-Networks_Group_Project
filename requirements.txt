@@ -1,0 +1,24 @@
+# Intelligent Parking Space Monitoring System
+# Recommended Python version: 3.12+
+#
+# Install:
+#   python -m pip install -r requirements.txt
+#
+# Core application:
+pyserial>=3.5,<4.0
+pandas>=2.2,<4.0
+numpy>=1.26,<3.0
+matplotlib>=3.8,<4.0
+
+# Jupyter Notebook / JupyterLab data visualisation:
+jupyterlab>=4.2,<5.0
+ipykernel>=6.29,<7.0
+
+# Optional: run the project's Python unit tests:
+pytest>=8.0,<10.0
+
+seaborn>=0.13,<1.0
+plotly==7.1.0
+scipy>=1.13,<2.0
+nbformat==5.11.1
+-e ./python

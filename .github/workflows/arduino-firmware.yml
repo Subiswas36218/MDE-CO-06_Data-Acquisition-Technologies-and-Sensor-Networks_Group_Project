@@ -1,0 +1,45 @@
+name: Arduino Firmware Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - "firmware/**/*.ino"
+      - ".github/workflows/arduino-firmware.yml"
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - "firmware/**/*.ino"
+      - ".github/workflows/arduino-firmware.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-uno:
+    name: Compile Arduino Uno firmware
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+
+      - name: Update Arduino package index
+        run: arduino-cli core update-index
+
+      - name: Install Arduino AVR core
+        run: arduino-cli core install arduino:avr
+
+      - name: Compile Intelligent Parking System firmware
+        run: |
+          arduino-cli compile \\
+            --fqbn arduino:avr:uno \\
+            firmware/IntelligentParkingSystem
