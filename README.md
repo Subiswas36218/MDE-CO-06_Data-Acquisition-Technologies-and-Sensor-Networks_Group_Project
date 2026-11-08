@@ -12,13 +12,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/OWNER/REPOSITORY/actions/workflows/ci.yml">
-    <img src="https://github.com/OWNER/REPOSITORY/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI workflow">
+  <a href="https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project/actions/workflows/ci.yml">
+    <img src="https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI workflow">
   </a>
-  <a href="https://github.com/OWNER/REPOSITORY/actions/workflows/arduino-firmware.yml">
-    <img src="https://github.com/OWNER/REPOSITORY/actions/workflows/arduino-firmware.yml/badge.svg?branch=main" alt="Arduino firmware workflow">
+  <a href="https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project/actions/workflows/arduino-firmware.yml">
+    <img src="https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project/actions/workflows/arduino-firmware.yml/badge.svg?branch=main" alt="Arduino firmware workflow">
   </a>
-  <a href="https://github.com/OWNER/REPOSITORY/blob/main/LICENSE">
+  <a href="https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/OWNER/REPOSITORY" alt="License">
   </a>
 </p>
