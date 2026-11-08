@@ -177,11 +177,9 @@ The paths below describe the intended project organisation. Some folders may be 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/OWNER/REPOSITORY.git
-cd REPOSITORY
+git clone https://github.com/Subiswas36218/MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project.git
+cd MDE-CO-06_Data-Acquisition-Technologies-and-Sensor-Networks_Group_Project
 ```
-
-Replace `OWNER/REPOSITORY` with the actual GitHub path.
 
 ### 2. Create and activate a virtual environment
 
