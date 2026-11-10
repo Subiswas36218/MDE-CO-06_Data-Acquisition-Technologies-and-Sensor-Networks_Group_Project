@@ -260,7 +260,6 @@ The paths below describe the intended project organisation. Some folders may be 
 │       └── IntelligentParkingSystem.ino
 ├── notebooks/
 │   ├── parking_data_visualization.ipynb
-│   └── parking_data_visualization_updated.ipynb
 ├── python/
 │   └── src/
 │       └── parking_monitor/
@@ -324,7 +323,7 @@ If no `pyproject.toml` exists, use the repository's documented `PYTHONPATH` or r
 ### 4. Open the notebook
 
 ```bash
-jupyter lab notebooks/parking_data_visualization_updated.ipynb
+jupyter lab notebooks/parking_data_visualization.ipynb
 ```
 
 If only the original notebook is present, open that file instead. Run the notebook from the repository root so relative data and report paths resolve as intended.
